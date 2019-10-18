@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        link(rel="stylesheet" href="/stylesheets/book.css")
+        title= `${book.book}`
+    body
+        a(href="/") home
+        div(id=book.id name="book")
+            h1=`${book.author}`
+            h2=`"${book.book}"`
+            h4=`${book.publication}`
+        form(id="changeBook" class="put")
+            fieldset
+                legend Отредактировать книгу
+                label Название:
+                    br
+                    input(id="book" autocomplete="off" value=`${book.book}`)
+                br
+                label Автор:
+                    br
+                    input(id="author" autocomplete="off" value=`${book.author}`)
+                br
+                label Публикация:
+                    br
+                    input(id="publication" autocomplete="off" value=`${book.publication}`)
+                br
+                input(type="submit" id="sub" disabled)
+
+        if(book.count)
+            p(id="take") Эта книга есть в библиотеке, хотите ее взять?
+            input(type="button" onclick="take(this)" value="Взять")
+        else
+            p(id="take") Эта книга у вас, хотите ее вернуть?
+            input(type="button" onclick="take(this)" value="Вернуть")
+        br
+        script(src="/javascripts/card.js")

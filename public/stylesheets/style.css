@@ -1,0 +1,74 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+input[type=text] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+}
+
+input[type=submit] {
+  width: 50%;
+  height: 40px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+input[type=submit]:disabled {
+  background-color: #86a085;
+}
+
+.post1 {
+  width: 20%;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  clear:left;
+  float: left;
+}
+
+.post2 {
+  width: 20%;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  float: left;
+  margin-left: 10px;
+}
+
+fieldset
+{
+  background-color:#f2f2f2;
+  max-width:500px;
+  padding:16px;
+}
+
+div > div{
+  width:150px;
+  height:150px;
+  float:left;
+  background:#f1f1f1;
+  margin:0 15px 15px 0;
+  text-align:center;
+  opacity:1;
+}

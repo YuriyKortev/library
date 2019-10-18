@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="/stylesheets/style.css")
+    title Библиотека
+    body
+      label
+        | Дата возврата :
+        input(type="date" id="date" oninput="loadDate(this)")
+        input(type="checkbox" id="count" onclick="loadCount(this)")
+        | В наличии
+        |
+        button(onclick='loadBut(this)' ) Сброс фильтра
+      p
+
+
+      div(id="list")
+        -for (let value of books)
+          div(id=value.id)
+            p= value.author
+            p= `"${value.book}"`
+            p= value.publication
+            a(href=`books/${value.id}`) карточка
+
+      form(id="addBook" class="post1")
+        fieldset
+          legend Добавить книгу
+          label Название:
+            br
+            input(id="book" autocomplete="off")
+          br
+          label Автор:
+            br
+            input(id="author" autocomplete="off")
+          br
+          label Публикация:
+            br
+            input(id="publication" autocomplete="off")
+          input(type="submit" id="sub" disabled)
+
+    form(id="delBook" class="post2" )
+      fieldset
+        legend Удалить книгу
+        label Название:
+          br
+          input(id="del_book" autocomplete="off")
+        input(type="submit" id="del_sub" disabled)
+
+      script(src="/javascripts/ajax.js")
